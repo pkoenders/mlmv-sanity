@@ -10,16 +10,20 @@ import blockContent from './blockContent'
 import images from './images'
 
 // Settings
-import gender from './genderType'
-import tags from './peer-supporters/tags'
-import location from './peer-supporters/location'
+import gender from './settings/genderType'
+import tags from './settings/tags'
+import location from './settings/location'
+import alertLevel from './settings/alertLevel'
 
 // Homepage
-import homepageIntro from './homepage/homepageIntro'
+import homepageIntro from './homepage/homepageContent'
 import communityComments from './homepage/communityComments'
+import homepageAlert from './homepage/homepageAlert'
 
 //Peer Supporters
+import peerSupportersHomepage from './peer-supporters/peerSupportersHomepage'
 import peerSupporters from './peer-supporters/peerSupporters'
+import categories from './peer-supporters/categories'
 
 // About us
 import aboutContent from './about/aboutContent'
@@ -54,13 +58,18 @@ export default createSchema({
     tags,
     gender,
     location,
+    alertLevel,
     images,
+    categories,
+
 
     //Homepage
+    homepageAlert,
     homepageIntro,
     communityComments,
 
     //Peer Supporters
+    peerSupportersHomepage,
     peerSupporters,
 
     //About us

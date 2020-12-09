@@ -1,8 +1,8 @@
-import categories from "./categories";
+import tags from "../settings/tags";
 
 export default {
   name: 'peerSupporters',
-  title: 'Peer Supporters',
+  title: 'Peer Supporter',
   type: 'document',
   fields: [
     {
@@ -16,7 +16,7 @@ export default {
       // ],
       validation: Rule =>
         Rule.fields({
-          en: fieldRule => fieldRule.required().min(5).error('A title of min. 5 characters is required'),
+          en: fieldRule => fieldRule.required().min(2).error('A title of min. 2 characters is required'),
         }),
     },
 
@@ -56,7 +56,7 @@ export default {
     {
       name: 'peerSupporterFriendlyName',
       title: 'Peer supporter first name',
-      description: 'Peer supporter friendly name',
+      description: 'Peer supporter friendly name (required)',
       type: 'localeString',
       // validation: Rule => [
       //   Rule.required().min(10).error('A title of min. 10 characters is required'),
@@ -188,13 +188,11 @@ export default {
   preview: {
     select: {
       title: 'peerSupporterFullName.en',
-      //categories: 'categories.categories.categories.categoriesTitle',
-      //categories: 'categories.categories',
-      cat0: 'categories.0.categoriesTitle.en',
-      cat1: 'categories.1.categoriesTitle.en',
-      cat2: 'categories.2.categoriesTitle.en',
-      cat3: 'categories.3.categoriesTitle.en',
-      cat4: 'categories.4.categoriesTitle.en',
+      tag0: 'tags.0.Tags.en',
+      tag1: 'tags.1.Tags.en',
+      tag2: 'tags.2.Tags.en',
+      tag3: 'tags.3.Tags.en',
+      tag4: 'tags.4.Tags.en',
 
 
       //categories: 'location.location'
@@ -213,10 +211,10 @@ export default {
     // }
 
 
-    prepare: ({ title, cat0, cat1, cat2, cat3, cat4 }) => {
-      const cats = [cat0, cat1, cat2, cat3].filter(Boolean)
-      const subtitle = cats.length > 0 ? `Categories: ${cats.join(', ')}` : ''
-      const hasMorecats = Boolean(cat4)
+    prepare: ({ title, tag0, tag1, tag2, tag3, tag4 }) => {
+      const tags = [tag0, tag1, tag2, tag3].filter(Boolean)
+      const subtitle = tags.length > 0 ? `Categories: ${tags.join(', ')}` : ''
+      const hasMorecats = Boolean(tag4)
       return {
         title,
         subtitle: hasMorecats ? `${subtitle}…` : subtitle

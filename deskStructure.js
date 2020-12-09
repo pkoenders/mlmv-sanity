@@ -35,6 +35,12 @@ export default () =>
                                 .title('Add or edit locations')
                                 .schemaType('location')
                                 .child(S.documentTypeList('location').title('Add or edit locations')),
+
+                            S.listItem()
+                                .title('Add or edit alert levels')
+                                .schemaType('alertLevel')
+                                .child(S.documentTypeList('alertLevel').title('Add or edit alerts levels')),
+
                         ]),
                 ),
 
@@ -44,6 +50,13 @@ export default () =>
                     S.list()
                         .title('Homepage')
                         .items([
+
+                            S.listItem()
+                                .title('Add or edit homepage alerts')
+                                .schemaType('homepageAlert')
+                                .child(S.documentTypeList('homepageAlert').title('Add or edit homepage alerts')),
+
+
 
                             S.listItem()
                                 .title('Edit intro')
@@ -75,9 +88,24 @@ export default () =>
 
 
             S.listItem()
-                .title('Peer Supporters')
-                .schemaType('peerSupporters')
-                .child(S.documentTypeList('peerSupporters').title('Peer Supporters')),
+                .title('Peer supporters')
+                .child(
+                    S.list()
+                        .title('Peer supporters')
+                        .items([
+
+                            S.listItem()
+                                .title('Peer supporters hompepage')
+                                .schemaType('peerSupportersHomepage')
+                                .child(S.documentTypeList('peerSupportersHomepage').title('Peer supporters hompepage')),
+
+                            S.listItem()
+                                .title('All peer supporters')
+                                .schemaType('peerSupporters')
+                                .child(S.documentTypeList('peerSupporters').title('All peer supporters')),
+
+                        ]),
+                ),
 
 
 
