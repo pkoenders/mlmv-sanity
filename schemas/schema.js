@@ -21,8 +21,18 @@ import communityComments from './homepage/communityComments'
 //Peer Supporters
 import peerSupporters from './peer-supporters/peerSupporters'
 
+// About us
+import aboutContent from './about/aboutContent'
+
+// Contact us
+import contactContent from './contact/contactContent'
+
+// Terms of use
+import termsOfUseContent from './terms-conditions/termsOfUseContent'
+
 // Accessibility
 import accessibilityContent from './accessibility/accessibilityContent'
+
 
 //Locale Object Types
 import localeString from './localeTypes/localeString'
@@ -52,6 +62,15 @@ export default createSchema({
 
     //Peer Supporters
     peerSupporters,
+
+    //About us
+    aboutContent,
+
+    //Contact us
+    contactContent,
+
+    //Terms of use
+    termsOfUseContent,
 
     // Accessibility
     accessibilityContent,

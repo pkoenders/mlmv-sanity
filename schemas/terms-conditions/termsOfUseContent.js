@@ -1,12 +1,12 @@
 export default {
-  name: 'accessibilityContent',
-  title: 'Accessibility content',
+  name: 'termsOfUseContent',
+  title: 'Terms of use content',
   type: 'document',
   __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
   fields: [
 
     {
-      name: 'accessibilityTitle',
+      name: 'termsOfUseTitle',
       title: 'Add a title for this page',
       type: 'localeString',
       validation: Rule =>
@@ -16,7 +16,7 @@ export default {
     },
 
     {
-      name: 'accessibilityDescription',
+      name: 'termsOfUseDescription',
       title: 'Add a description for this page',
       type: 'localeText',
       validation: Rule =>
@@ -26,13 +26,13 @@ export default {
     },
 
     {
-      name: 'accessibilityContentActive',
+      name: 'termsOfUseContentActive',
       title: 'Is content active?',
       type: 'boolean'
     },
 
     {
-      name: 'accessibilityContent',
+      name: 'termsOfUseContent',
       title: ' ',
       //type: 'blockContent',
       type: 'localeBlockContent',
@@ -47,7 +47,7 @@ export default {
     prepare(selection) {
       const { title } = selection
       return {
-        title: 'Accessibility content'
+        title: 'Terms of use content'
       }
     }
   }

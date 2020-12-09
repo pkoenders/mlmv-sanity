@@ -2,7 +2,11 @@ import S from '@sanity/desk-tool/structure-builder'
 
 
 const hiddenDocTypes = listItem => ![
-    "homepageIntro", "accessibilityContent"
+    "homepageIntro",
+    "accessibilityContent",
+    "termsOfUseContent",
+    "aboutContent",
+    "contactContent"
 ].includes(listItem.getId())
 
 export default () =>
@@ -76,6 +80,53 @@ export default () =>
                 .child(S.documentTypeList('peerSupporters').title('Peer Supporters')),
 
 
+
+            S.listItem()
+                .title('About us')
+                .child(
+                    S.editor()
+                        .id('aboutContent')
+                        .schemaType('aboutContent'),
+
+                    ...S.documentTypeListItems()
+                        .filter(hiddenDocTypes)
+                ),
+
+            // S.listItem()
+            //     .title('Terms of use')
+            //     .schemaType('termsOfUseContent')
+            //     .child(S.documentTypeList('termsOfUseContent').title('Terms of use')),
+
+
+            S.listItem()
+                .title('Contact us')
+                .child(
+                    S.editor()
+                        .id('contactContent')
+                        .schemaType('contactContent'),
+
+                    ...S.documentTypeListItems()
+                        .filter(hiddenDocTypes)
+                ),
+
+
+            S.listItem()
+                .title('Terms of use')
+                .child(
+                    S.editor()
+                        .id('termsOfUseContent')
+                        .schemaType('termsOfUseContent'),
+
+                    ...S.documentTypeListItems()
+                        .filter(hiddenDocTypes)
+                ),
+
+            // S.listItem()
+            //     .title('Terms of use')
+            //     .schemaType('termsOfUseContent')
+            //     .child(S.documentTypeList('termsOfUseContent').title('Terms of use')),
+
+
             S.listItem()
                 .title('Accessibility')
                 .child(
@@ -91,6 +142,11 @@ export default () =>
             //     .title('Accessibility')
             //     .schemaType('accessibilityContent')
             //     .child(S.documentTypeList('accessibilityContent').title('Accessibility')),
+
+
+
+
+
 
 
         ])
