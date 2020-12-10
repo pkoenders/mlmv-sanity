@@ -1,8 +1,8 @@
 export default {
   name: 'homepageAlert',
-  title: 'Homepage llert',
+  title: 'Homepage Alerts',
   type: 'document',
-  __experimental_actions: ['create', 'update', /*'delete',*/ 'publish'],
+  __experimental_actions: ['create', 'update', 'delete', 'publish'],
   fields: [
 
     {
@@ -18,6 +18,18 @@ export default {
     {
       name: 'homepageAlertActive',
       title: 'Is this alert active?',
+      type: 'boolean'
+    },
+
+    {
+      name: 'homepageAlertExpirey',
+      title: 'Expires on',
+      type: 'datetime'
+    },
+
+    {
+      name: 'homepageAlertDismiss',
+      title: 'User can dismiss alert',
       type: 'boolean'
     },
 
@@ -51,6 +63,14 @@ export default {
     //   //type: 'blockContent',
     //   type: 'localeBlockContent',
     // },
+
+    {
+      name: "order",
+      title: "Order",
+      type: "number",
+      hidden: true,
+    },
+
 
   ],
 
