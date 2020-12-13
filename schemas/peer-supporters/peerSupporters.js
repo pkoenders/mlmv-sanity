@@ -10,6 +10,8 @@ export default {
       name: 'peerSupporterFullName',
       title: 'Peer supporter full name',
       type: 'localeString',
+      validation: Rule => Rule.required().error('A min of 2 characters is required'),
+
 
       // validation: Rule => [
       //   Rule.required().min(10).error('A title of min. 10 characters is required'),
@@ -28,23 +30,11 @@ export default {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
-      description: 'The url of the page',
+      description: 'The url of the page (required)',
       options: {
         source: 'peerSupporterFullName.en',
         maxLength: 96,
-        //type: 'slug',
-        // slugify: input => input
-        //   .toLowerCase()
-        //   .replace(/\s+/g, '-')
-        //   .slice(0, 200)
       },
-
-      //* validation: Rule => Rule.required().min(2).error('A min of 2 characters is required')
-
-      // validation: Rule =>
-      //   Rule.fields({
-      //     en: fieldRule => fieldRule.required().min(2).error('A of min. 2 characters is required'),
-      //   }),
     },
 
     {
@@ -62,14 +52,14 @@ export default {
 
     {
       name: 'peerSupporterFriendlyName',
-      title: 'Peer supporter first nameeee',
+      title: 'Peer supporter first name',
       description: 'Peer supporter friendly name (required)',
       type: 'localeString',
-      // validation: Rule => Rule.required().min(2).error('A min of 2 characters is required')
-      validation: Rule =>
-        Rule.fields({
-          en: fieldRule => fieldRule.required().min(2).error('A min of 2 characters is required'),
-        }),
+      validation: Rule => Rule.required().error('A min of 2 characters is required'),
+      // validation: Rule =>
+      //   Rule.fields({
+      //     en: fieldRule => fieldRule.required().min(2).error('A min of 2 characters is required'),
+      //   }),
     },
 
     {
@@ -130,6 +120,8 @@ export default {
       description: 'Please provide a short description for SEO and preview text (required)',
       type: 'localeText',
       rows: 3,
+      validation: Rule => Rule.required().error('A min of 2 characters is required'),
+
 
       //* validation: Rule => Rule.required().min(2).error('A min of 2 characters is required')
 
@@ -144,6 +136,7 @@ export default {
       title: 'Long descriotion',
       //type: 'blockContent',
       type: 'localeBlockContent',
+      validation: Rule => Rule.required().error('A min of 2 characters is required'),
       description: 'Please provide a long description (required)',
     },
 

@@ -41,6 +41,11 @@ export default () =>
                                 .schemaType('alertLevel')
                                 .child(S.documentTypeList('alertLevel').title('Add or edit alerts levels')),
 
+                            S.listItem()
+                                .title('Add or edit news and event types')
+                                .schemaType('newsEventType')
+                                .child(S.documentTypeList('newsEventType').title('Add or edit news and event types')),
+
                         ]),
                 ),
 
@@ -106,6 +111,28 @@ export default () =>
 
                         ]),
                 ),
+
+
+            S.listItem()
+                .title('News and events')
+                .child(
+                    S.list()
+                        .title('News and events')
+                        .items([
+
+                            S.listItem()
+                                .title('News and events hompepage')
+                                .schemaType('newsEventsHomepage')
+                                .child(S.documentTypeList('newsEventsHomepage').title('News and events hompepage')),
+
+                            S.listItem()
+                                .title('All news and events')
+                                .schemaType('newsEvent')
+                                .child(S.documentTypeList('newsEvent').title('All news and events')),
+
+                        ]),
+                ),
+
 
 
 

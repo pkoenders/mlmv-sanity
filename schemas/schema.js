@@ -14,6 +14,7 @@ import gender from './settings/genderType'
 import tags from './settings/tags'
 import location from './settings/location'
 import alertLevel from './settings/alertLevel'
+import newsEventType from './settings/newsEventType'
 
 // Homepage
 import homepageIntro from './homepage/homepageContent'
@@ -23,6 +24,10 @@ import homepageAlert from './homepage/homepageAlert'
 //Peer Supporters
 import peerSupportersHomepage from './peer-supporters/peerSupportersHomepage'
 import peerSupporters from './peer-supporters/peerSupporters'
+
+//News and events
+import newsEventsHomepage from './news-events/newsEventsHomepage'
+import newsEvents from './news-events/newsEvents'
 
 // About us
 import aboutContent from './about/aboutContent'
@@ -59,6 +64,7 @@ export default createSchema({
     location,
     alertLevel,
     images,
+    newsEventType,
 
 
     //Homepage
@@ -69,6 +75,10 @@ export default createSchema({
     //Peer Supporters
     peerSupportersHomepage,
     peerSupporters,
+
+    //News and events
+    newsEventsHomepage,
+    newsEvents,
 
     //About us
     aboutContent,

@@ -8,10 +8,12 @@ export default {
       title: 'Full name',
       description: 'Will not be displayed on website',
       type: 'localeString',
-      validation: Rule =>
-        Rule.fields({
-          en: fieldRule => fieldRule.required().min(5).error('A title of min. 5 characters is required'),
-        }),
+      validation: Rule => Rule.required().error('A min of 2 characters is required'),
+
+      // validation: Rule =>
+      //   Rule.fields({
+      //     en: fieldRule => fieldRule.required().min(5).error('A title of min. 5 characters is required'),
+      //   }),
     },
 
     {
@@ -32,10 +34,12 @@ export default {
       title: 'First name',
       description: 'Friendly name (to be displayed on website)',
       type: 'localeString',
-      validation: Rule =>
-        Rule.fields({
-          en: fieldRule => fieldRule.required().min(2).error('A title of min. 2 characters is required'),
-        }),
+      validation: Rule => Rule.required().error('A min of 2 characters is required'),
+
+      // validation: Rule =>
+      //   Rule.fields({
+      //     en: fieldRule => fieldRule.required().min(2).error('A title of min. 2 characters is required'),
+      //   }),
     },
 
     {
