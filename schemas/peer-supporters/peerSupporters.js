@@ -62,14 +62,14 @@ export default {
 
     {
       name: 'peerSupporterFriendlyName',
-      title: 'Peer supporter first name',
+      title: 'Peer supporter first nameeee',
       description: 'Peer supporter friendly name (required)',
       type: 'localeString',
-      //* validation: Rule => Rule.required().min(2).error('A min of 2 characters is required')
-      // validation: Rule =>
-      //   Rule.fields({
-      //     en: fieldRule => fieldRule.required().min(2).error('A min of 2 characters is required'),
-      //   }),
+      // validation: Rule => Rule.required().min(2).error('A min of 2 characters is required')
+      validation: Rule =>
+        Rule.fields({
+          en: fieldRule => fieldRule.required().min(2).error('A min of 2 characters is required'),
+        }),
     },
 
     {

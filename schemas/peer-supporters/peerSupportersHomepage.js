@@ -11,7 +11,7 @@ export default {
       type: 'localeString',
       validation: Rule =>
         Rule.fields({
-          en: fieldRule => fieldRule.required().min(5).error('A title of min. 5 characters is required'),
+          en: fieldRule => fieldRule.required().min(2).error('A title of min. 2 characters is required'),
         }),
     },
 
@@ -21,7 +21,7 @@ export default {
       type: 'localeText',
       validation: Rule =>
         Rule.fields({
-          en: fieldRule => fieldRule.required().min(5).error('A title of min. 5 characters is required'),
+          en: fieldRule => fieldRule.required().min(2).error('A title of min. 2 characters is required'),
         }),
     },
 
