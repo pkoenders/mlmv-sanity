@@ -21,7 +21,7 @@ export default {
             title: 'Alternative Text',
             //type: 'string'
             type: 'localeString',
-            description: 'Important for SEO and accessibility',
+            description: 'Important for SEO and accessibility (required)',
             options: {
                 isHighlighted: true // <-- make this field easily accessible
             }

@@ -23,7 +23,6 @@ import homepageAlert from './homepage/homepageAlert'
 //Peer Supporters
 import peerSupportersHomepage from './peer-supporters/peerSupportersHomepage'
 import peerSupporters from './peer-supporters/peerSupporters'
-import categories from './peer-supporters/categories'
 
 // About us
 import aboutContent from './about/aboutContent'
@@ -60,7 +59,6 @@ export default createSchema({
     location,
     alertLevel,
     images,
-    categories,
 
 
     //Homepage
