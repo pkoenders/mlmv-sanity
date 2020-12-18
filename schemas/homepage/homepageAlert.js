@@ -25,7 +25,13 @@ export default {
     {
       name: 'homepageAlertExpirey',
       title: 'Expires on',
-      type: 'datetime'
+      type: 'datetime',
+      options: {
+        dateFormat: 'dddd DD MMM, YYYY',
+        timeFormat: 'HH:mm a',
+        timeStep: 15,
+        calendarTodayLabel: 'Today'
+      }
     },
 
     {

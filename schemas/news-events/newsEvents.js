@@ -34,7 +34,43 @@ export default {
       name: 'newsEventType',
       title: 'Post type',
       type: 'reference',
-      to: { type: 'newsEventType' }
+      to: { type: 'newsEventType' },
+    },
+
+
+    {
+      name: 'startTime',
+      title: 'If event, event start date/time',
+      type: 'datetime',
+      options: {
+        dateFormat: 'dddd DD MMM, YYYY',
+        timeFormat: 'HH:mm',
+        inputDate: true,
+        inputTime: true,
+        timeStep: 15,
+        calendarTodayLabel: 'Today',
+      }
+    },
+
+    {
+      name: 'endTime',
+      title: 'If event, event end date/time',
+      type: 'datetime',
+      options: {
+        dateFormat: 'dddd DD MMM, YYYY',
+        timeFormat: 'HH:mm ',
+        inputDate: true,
+        inputTime: true,
+        timeStep: 15,
+        calendarTodayLabel: 'Today',
+      }
+    },
+
+    {
+      name: 'location',
+      title: 'If event, event location',
+      type: 'reference',
+      to: { type: 'location' }
     },
 
     {
@@ -43,12 +79,7 @@ export default {
       type: 'boolean'
     },
 
-    {
-      name: 'location',
-      title: 'Location',
-      type: 'reference',
-      to: { type: 'location' }
-    },
+
 
     {
       name: 'coverImage',
@@ -66,14 +97,30 @@ export default {
     {
       name: 'publishedAt',
       title: 'Published at',
-      type: 'datetime'
+      type: 'datetime',
+      options: {
+        dateFormat: 'dddd DD MMM, YYYY',
+        timeFormat: 'HH:mm ',
+        inputDate: true,
+        inputTime: true,
+        timeStep: 15,
+        calendarTodayLabel: 'Today',
+      }
     },
 
     {
-      name: 'expireyDate',
+      name: 'expiryDate',
       title: 'Expires when',
       description: 'Add a date when this item expires from being shown on website',
-      type: 'datetime'
+      type: 'datetime',
+      options: {
+        dateFormat: 'dddd DD MMM, YYYY',
+        timeFormat: 'HH:mm ',
+        inputDate: true,
+        inputTime: true,
+        timeStep: 15,
+        calendarTodayLabel: 'Today',
+      }
     },
 
     {
@@ -105,22 +152,18 @@ export default {
   preview: {
     select: {
       title: 'newsEventName.en',
-      tag0: 'tags.0.tagsTitle.en',
-      tag1: 'tags.1.tagsTitle.en',
-      tag2: 'tags.2.tagsTitle.en',
-      tag3: 'tags.3.tagsTitle.en',
-      tag4: 'tags.4.tagsTitle.en',
+      itemActive: 'itemActive',
+      newsEventType: 'newsEventType.newsEventTypeTitle',
+      publishedAt: 'publishedAt',
     },
 
 
 
-    prepare: ({ title, tag0, tag1, tag2, tag3, tag4 }) => {
-      const tags = [tag0, tag1, tag2, tag3].filter(Boolean)
-      const subtitle = tags.length > 0 ? `Tags: ${tags.join(', ')}` : ''
-      const hasMorecats = Boolean(tag4)
+    prepare: ({ title, itemActive, newsEventType, publishedAt }) => {
+      const subtitle = newsEventType + ' - Active: ' + itemActive + ', Published: ' + publishedAt
       return {
         title,
-        subtitle: hasMorecats ? `${subtitle}…` : subtitle
+        subtitle,
       }
     }
   }
