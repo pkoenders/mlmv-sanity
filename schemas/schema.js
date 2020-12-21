@@ -11,6 +11,7 @@ import blockContent from './blockContent'
 import images from './images'
 
 // Settings
+import siteSettings from './settings/siteSettings'
 import gender from './settings/genderType'
 import tags from './settings/tags'
 import location from './settings/location'
@@ -18,6 +19,7 @@ import alertLevel from './settings/alertLevel'
 import newsEventType from './settings/newsEventType'
 
 // Homepage
+import homepageSettings from './homepage/homepageSettings'
 import homepageIntro from './homepage/homepageContent'
 import communityComments from './homepage/communityComments'
 import homepageAlert from './homepage/homepageAlert'
@@ -60,6 +62,7 @@ export default createSchema({
     // in the studio.
 
     //Settings,
+    siteSettings,
     tags,
     gender,
     location,
@@ -69,6 +72,7 @@ export default createSchema({
 
 
     //Homepage
+    homepageSettings,
     homepageAlert,
     homepageIntro,
     communityComments,

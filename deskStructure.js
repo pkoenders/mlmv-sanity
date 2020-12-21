@@ -22,6 +22,11 @@ export default () =>
                         .items([
 
                             S.listItem()
+                                .title('Site settings')
+                                .schemaType('siteSettings')
+                                .child(S.documentTypeList('siteSettings').title('Site settings')),
+
+                            S.listItem()
                                 .title('Add or edit tags')
                                 .schemaType('tags')
                                 .child(S.documentTypeList('tags').title('Add or edit tags')),
@@ -55,6 +60,12 @@ export default () =>
                     S.list()
                         .title('Homepage')
                         .items([
+
+                            S.listItem()
+                                .title('Edit homepage settings')
+                                .schemaType('homepageSettings')
+                                .child(S.documentTypeList('homepageSettings').title('Edit homepage settings')),
+
 
                             S.listItem()
                                 .title('Add or edit homepage alerts')
