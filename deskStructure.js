@@ -125,6 +125,27 @@ export default () =>
 
 
             S.listItem()
+                .title('Support services')
+                .child(
+                    S.list()
+                        .title('Support services')
+                        .items([
+
+                            S.listItem()
+                                .title('Support services hompepage')
+                                .schemaType('supportServicesHomepage')
+                                .child(S.documentTypeList('supportServicesHomepage').title('Support services hompepage')),
+
+                            S.listItem()
+                                .title('All Support services')
+                                .schemaType('supportServices')
+                                .child(S.documentTypeList('supportServices').title('All Support services')),
+
+                        ]),
+                ),
+
+
+            S.listItem()
                 .title('News and events')
                 .child(
                     S.list()

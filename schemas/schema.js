@@ -28,6 +28,11 @@ import homepageAlert from './homepage/homepageAlert'
 import peerSupportersHomepage from './peer-supporters/peerSupportersHomepage'
 import peerSupporters from './peer-supporters/peerSupporters'
 
+//Support services
+import supportServicesHomepage from './support-services/supportServicesHomepage'
+import supportServices from './support-services/supportServices'
+
+
 //News and events
 import newsEventsHomepage from './news-events/newsEventsHomepage'
 import newsEvents from './news-events/newsEvents'
@@ -80,6 +85,10 @@ export default createSchema({
     //Peer Supporters
     peerSupportersHomepage,
     peerSupporters,
+
+    //Support services
+    supportServicesHomepage,
+    supportServices,
 
     //News and events
     newsEventsHomepage,

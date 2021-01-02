@@ -43,11 +43,11 @@ export default {
       type: 'boolean'
     },
 
-    {
-      name: 'peerSupporterAddToHomepage',
-      title: 'Add to homepage',
-      type: 'boolean'
-    },
+    // {
+    //   name: 'peerSupporterAddToHomepage',
+    //   title: 'Add to homepage',
+    //   type: 'boolean'
+    // },
 
 
     {
@@ -152,6 +152,7 @@ export default {
   preview: {
     select: {
       title: 'peerSupporterFullName.en',
+      active: 'peerSupporterActive',
       tag0: 'tags.0.tagsTitle.en',
       tag1: 'tags.1.tagsTitle.en',
       tag2: 'tags.2.tagsTitle.en',
@@ -161,13 +162,14 @@ export default {
 
 
 
-    prepare: ({ title, tag0, tag1, tag2, tag3, tag4 }) => {
+    prepare: ({ title, active, tag0, tag1, tag2, tag3, tag4 }) => {
       const tags = [tag0, tag1, tag2, tag3].filter(Boolean)
-      const subtitle = tags.length > 0 ? `Tags: ${tags.join(', ')}` : ''
-      const hasMorecats = Boolean(tag4)
+      //const subtitle = tags.length > 0 ? `Tags: ${tags.join(', ')}` : ''
+      // const hasMorecats = Boolean(tag4)
+      const subtitle = `Active: ${active}`
       return {
         title,
-        subtitle: hasMorecats ? `${subtitle}…` : subtitle
+        subtitle
       }
     }
   }

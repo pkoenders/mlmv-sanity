@@ -13,11 +13,13 @@ export default {
       validation: Rule => Rule.required().error('A min of 2 characters is required'),
     },
 
+
     {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
       description: 'The url of the page (required)',
+      validation: Rule => Rule.required().error('A min of 2 characters is required'),
       options: {
         source: 'newsEventName.en',
         maxLength: 96,
@@ -88,13 +90,6 @@ export default {
     },
 
     {
-      name: 'tags',
-      title: 'Tags',
-      type: 'array',
-      of: [{ type: 'reference', to: { type: 'tags' } }]
-    },
-
-    {
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
@@ -113,6 +108,7 @@ export default {
       title: 'Expires when',
       description: 'Add a date when this item expires from being shown on website',
       type: 'datetime',
+      //  validation: Rule => Rule.required().error('A min of 2 characters is required'),
       options: {
         dateFormat: 'dddd DD MMM, YYYY',
         timeFormat: 'HH:mm ',
@@ -160,7 +156,8 @@ export default {
 
 
     prepare: ({ title, itemActive, newsEventType, publishedAt }) => {
-      const subtitle = newsEventType + ' - Active: ' + itemActive + ', Published: ' + publishedAt
+      const subtitle = newsEventType + ' - Active: ' + itemActive + ', Published: ' + publishedAt.split('T')[0] // YYYY-MM-DD --> YYYY
+
       return {
         title,
         subtitle,
