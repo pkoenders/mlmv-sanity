@@ -16,5 +16,4 @@ export default {
       title: 'location.en'
     }
   }
-
 }
