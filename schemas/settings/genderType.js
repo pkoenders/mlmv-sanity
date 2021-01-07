@@ -7,16 +7,7 @@ export default {
     {
       name: 'genderTitle',
       title: 'Title',
-      type: 'string'
-    },
-
-    {
-      name: 'mainImage',
-      title: 'Main image',
-      type: 'image',
-      options: {
-        hotspot: true
-      }
+      type: 'localeString',
     },
 
     {
@@ -27,11 +18,9 @@ export default {
     },
 
   ],
-
-  // preview: {
-  //   select: {
-  //     title: 'title',
-  //     media: 'mainImage'
-  //   },
-  // }
+  preview: {
+    select: {
+      title: 'genderTitle.en'
+    }
+  }
 }
