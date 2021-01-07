@@ -11,11 +11,11 @@ export default {
       type: 'boolean'
     },
 
-    {
-      name: 'homepageSupportsActive',
-      title: 'Enabe or disable all peer supports',
-      type: 'boolean'
-    },
+    // {
+    //   name: 'homepageSupportsActive',
+    //   title: 'Enabe or disable all peer supports',
+    //   type: 'boolean'
+    // },
 
     {
       name: 'homepageCommentsActive',
