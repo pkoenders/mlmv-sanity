@@ -90,7 +90,7 @@ export default {
       const { title, date } = selection
       return {
         title: title,
-        subtitle: date.split('T')[0] // YYYY-MM-DD --> YYYY
+        subtitle: 'Published: ' + date.split('T')[0] // YYYY-MM-DD --> YYYY
       }
     }
   }

@@ -84,6 +84,17 @@ export default {
   preview: {
     select: {
       title: 'homepageAlertName',
+      date: 'homepageAlertExpirey',
+      alertLevel: 'alertLevel.alertLevel',
     },
+    prepare(selection) {
+      const { title, date, alertLevel } = selection
+      const expireyDate = `${date ? date.split('T')[0] : 'Not set'}`
+      //const alertLevel = `${alertLevel1, alertLevel2, alertLevel3}`
+      return {
+        title: title,
+        subtitle: `Expires: ${expireyDate} - Alert: ${alertLevel ? alertLevel : 'Not set'}`
+      }
+    }
   }
 }
