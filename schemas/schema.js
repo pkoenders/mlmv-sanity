@@ -20,6 +20,7 @@ import newsEventType from './settings/newsEventType'
 
 // Homepage
 import homepageSettings from './homepage/homepageSettings'
+import homepageHeader from './homepage/homepageHeader'
 import homepageIntro from './homepage/homepageContent'
 import communityComments from './homepage/communityComments'
 import homepageAlert from './homepage/homepageAlert'
@@ -78,6 +79,7 @@ export default createSchema({
 
     //Homepage
     homepageSettings,
+    homepageHeader,
     homepageAlert,
     homepageIntro,
     communityComments,

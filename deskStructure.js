@@ -73,13 +73,23 @@ export default () =>
                                 .child(S.documentTypeList('homepageAlert').title('Add or edit homepage alerts')),
 
 
-
                             S.listItem()
                                 .title('Edit intro')
                                 .child(
                                     S.editor()
                                         .id('homepageIntro')
                                         .schemaType('homepageIntro'),
+
+                                    ...S.documentTypeListItems()
+                                        .filter(hiddenDocTypes)
+                                ),
+
+                            S.listItem()
+                                .title('Edit header image')
+                                .child(
+                                    S.editor()
+                                        .id('homepageHeader')
+                                        .schemaType('homepageHeader'),
 
                                     ...S.documentTypeListItems()
                                         .filter(hiddenDocTypes)
