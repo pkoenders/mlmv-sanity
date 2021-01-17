@@ -7,7 +7,7 @@ export default {
   fields: [
 
     {
-      name: 'peerSupporterFullName',
+      name: 'title',
       title: 'Peer supporter full name',
       type: 'localeString',
       validation: Rule => Rule.required().error('A min of 2 characters is required'),
@@ -38,7 +38,7 @@ export default {
     },
 
     {
-      name: 'peerSupporterActive',
+      name: 'active',
       title: 'Is this peer supporter active?',
       type: 'boolean'
     },
@@ -51,7 +51,7 @@ export default {
 
 
     {
-      name: 'peerSupporterFriendlyName',
+      name: 'shortName',
       title: 'Peer supporter first name',
       description: 'Peer supporter friendly name (required)',
       type: 'localeString',
@@ -63,7 +63,7 @@ export default {
     },
 
     {
-      name: 'peerSupporterEmail',
+      name: 'email',
       title: 'Peer supporter email address',
       description: 'This is not presented on the website (required)',
       type: 'string',
@@ -82,7 +82,7 @@ export default {
     },
 
     {
-      name: 'peerSupporterPeople',
+      name: 'supportPeople',
       title: 'People (iwi, tribe etc)',
       type: 'string',
     },
@@ -115,7 +115,7 @@ export default {
     },
 
     {
-      name: 'peerShortDescription',
+      name: 'description',
       title: 'Short description',
       description: 'Please provide a short description for SEO and preview text (required)',
       type: 'localeText',
@@ -132,7 +132,7 @@ export default {
     },
 
     {
-      name: 'peerLongDescription',
+      name: 'longDescription',
       title: 'Long descriotion',
       //type: 'blockContent',
       type: 'localeBlockContent',
@@ -151,8 +151,8 @@ export default {
 
   preview: {
     select: {
-      title: 'peerSupporterFullName.en',
-      active: 'peerSupporterActive',
+      title: 'title.en',
+      active: 'active',
       tag0: 'tags.0.tagsTitle.en',
       tag1: 'tags.1.tagsTitle.en',
       tag2: 'tags.2.tagsTitle.en',
