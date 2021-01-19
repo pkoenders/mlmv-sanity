@@ -6,7 +6,7 @@ export default {
   fields: [
 
     {
-      name: 'peerSupportersTitle',
+      name: 'title',
       title: 'Add a title for this page',
       type: 'localeString',
       validation: Rule => Rule.required().error('A min of 2 characters is required'),
@@ -18,8 +18,8 @@ export default {
     },
 
     {
-      name: 'peerSupportersDescription',
-      title: 'Add a description for this page',
+      name: 'description',
+      title: 'Add a short description for this page',
       type: 'localeText',
       validation: Rule => Rule.required().error('A min of 2 characters is required'),
 
@@ -29,19 +29,12 @@ export default {
       //   }),
     },
 
-    // {
-    //   name: 'peerSupportersActive',
-    //   title: 'Is content active?',
-    //   type: 'boolean'
-    // },
-
-    // {
-    //   name: 'accessibilityContent',
-    //   title: ' ',
-    //   //type: 'blockContent',
-    //   type: 'localeBlockContent',
-    // },
-
+    {
+      name: 'content',
+      title: 'Add some content',
+      //type: 'blockContent',
+      type: 'localeBlockContent',
+    },
   ],
 
   preview: {

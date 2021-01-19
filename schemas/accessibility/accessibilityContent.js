@@ -6,7 +6,7 @@ export default {
   fields: [
 
     {
-      name: 'accessibilityTitle',
+      name: 'title',
       title: 'Add a title for this page',
       type: 'localeString',
       validation: Rule => Rule.required().error('A min of 2 characters is required'),
@@ -18,27 +18,16 @@ export default {
     },
 
     {
-      name: 'accessibilityDescription',
+      name: 'description',
       title: 'Add a description for this page',
       type: 'localeText',
       validation: Rule => Rule.required().error('A min of 2 characters is required'),
-
-      // validation: Rule =>
-      //   Rule.fields({
-      //     en: fieldRule => fieldRule.required().min(5).error('A title of min. 5 characters is required'),
-      //   }),
     },
 
-    {
-      name: 'accessibilityContentActive',
-      title: 'Is content active?',
-      type: 'boolean'
-    },
 
     {
-      name: 'accessibilityContent',
+      name: 'content',
       title: ' ',
-      //type: 'blockContent',
       type: 'localeBlockContent',
     },
 

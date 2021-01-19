@@ -7,7 +7,7 @@ export default {
   fields: [
 
     {
-      name: 'newsEventName',
+      name: 'title',
       title: 'Name of news or event item',
       type: 'localeString',
       validation: Rule => Rule.required().error('A min of 2 characters is required'),
@@ -21,19 +21,19 @@ export default {
       description: 'The url of the page (required)',
       validation: Rule => Rule.required().error('A min of 2 characters is required'),
       options: {
-        source: 'newsEventName.en',
+        source: 'title.en',
         maxLength: 96,
       },
     },
 
     {
-      name: 'itemActive',
+      name: 'active',
       title: 'Is this item active?',
       type: 'boolean'
     },
 
     {
-      name: 'newsEventType',
+      name: 'type',
       title: 'Post type',
       type: 'reference',
       to: { type: 'newsEventType' },
@@ -76,14 +76,6 @@ export default {
     },
 
     {
-      name: 'addToHomepage',
-      title: 'Add to homepage',
-      type: 'boolean'
-    },
-
-
-
-    {
       name: 'coverImage',
       title: 'Cover image',
       type: 'images',
@@ -120,8 +112,8 @@ export default {
     },
 
     {
-      name: 'shortDescription',
-      title: 'Short description',
+      name: 'description',
+      title: 'Description',
       description: 'Please provide a short description for SEO and preview text (required)',
       type: 'localeText',
       rows: 3,
@@ -129,11 +121,11 @@ export default {
     },
 
     {
-      name: 'longDescription',
-      title: 'Long descriotion',
+      name: 'content',
+      title: 'Content',
       type: 'localeBlockContent',
       validation: Rule => Rule.required().error('A min of 2 characters is required'),
-      description: 'Please provide a long description (required)',
+      description: 'Please add some content (required)',
     },
 
     {
@@ -147,9 +139,9 @@ export default {
 
   preview: {
     select: {
-      title: 'newsEventName.en',
-      itemActive: 'itemActive',
-      newsEventType: 'newsEventType.newsEventTypeTitle',
+      title: 'title.en',
+      itemActive: 'active',
+      newsEventType: 'type.newsEventTypeTitle',
       publishedAt: 'publishedAt',
     },
 

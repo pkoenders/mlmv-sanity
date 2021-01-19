@@ -6,39 +6,22 @@ export default {
   fields: [
 
     {
-      name: 'aboutTitle',
+      name: 'title',
       title: 'Add a title for this page',
       type: 'localeString',
       validation: Rule => Rule.required().error('A min of 2 characters is required'),
-
-      // validation: Rule =>
-      //   Rule.fields({
-      //     en: fieldRule => fieldRule.required().min(5).error('A title of min. 5 characters is required'),
-      //   }),
     },
 
     {
-      name: 'aboutDescription',
+      name: 'description',
       title: 'Add a description for this page',
       type: 'localeText',
       validation: Rule => Rule.required().error('A min of 2 characters is required'),
-
-      // validation: Rule =>
-      //   Rule.fields({
-      //     en: fieldRule => fieldRule.required().min(5).error('A title of min. 5 characters is required'),
-      //   }),
     },
 
     {
-      name: 'aboutContentActive',
-      title: 'Is content active?',
-      type: 'boolean'
-    },
-
-    {
-      name: 'aboutContent',
-      title: ' ',
-      //type: 'blockContent',
+      name: 'content',
+      title: 'Add some content',
       type: 'localeBlockContent',
     },
 

@@ -4,26 +4,21 @@ export default {
   type: 'document',
   __experimental_actions: ['create', 'update', 'delete', 'publish'],
   fields: [
-
     {
-      name: 'homepageAlertName',
-      title: 'Add a name for this alert',
-      type: 'string',
-      description: 'This is a required field',
-
-      validation: Rule => [
-        Rule.required().min(2).error('A title of min. 2 characters is required'),
-      ],
+      name: 'title',
+      title: 'Add a name for this alert (required)',
+      type: 'localeString',
+      validation: Rule => Rule.required().error('A min of 2 characters is required'),
     },
 
     {
-      name: 'homepageAlertActive',
+      name: 'active',
       title: 'Is this alert active?',
       type: 'boolean'
     },
 
     {
-      name: 'homepageAlertExpirey',
+      name: 'expirey',
       title: 'Expires on',
       type: 'datetime',
       options: {
@@ -35,41 +30,25 @@ export default {
     },
 
     {
-      name: 'homepageAlertDismiss',
+      name: 'dismiss',
       title: 'User can dismiss alert',
       type: 'boolean'
     },
 
     {
-      name: 'alertLevel',
-      title: 'Alert level',
+      name: 'level',
+      title: 'Alert level (required)',
       type: 'reference',
-      to: { type: 'alertLevel' }
+      to: { type: 'alertLevel' },
+      validation: Rule => Rule.required().error('Pleease select a level'),
     },
 
-
     {
-      name: 'homepageAlertTitle',
-      title: 'Add a title for this alert',
-      description: 'This alert will appear on the homepage when activated',
-      type: 'localeString',
-    },
-
-
-
-    {
-      name: 'homepageAlertDescription',
+      name: 'description',
       title: 'Add a description for this alert',
       type: 'localeBlockContent',
       description: 'Please provide description',
     },
-
-    // {
-    //   name: 'accessibilityContent',
-    //   title: ' ',
-    //   //type: 'blockContent',
-    //   type: 'localeBlockContent',
-    // },
 
     {
       name: "order",
@@ -83,10 +62,10 @@ export default {
 
   preview: {
     select: {
-      title: 'homepageAlertName',
-      active: 'homepageAlertActive',
-      date: 'homepageAlertExpirey',
-      alert: 'alertLevel.alertLevel',
+      title: 'title.en',
+      active: 'active',
+      date: 'expirey',
+      alert: 'level.alertLevel',
     },
     prepare(selection) {
       const { title, active, date, alert } = selection

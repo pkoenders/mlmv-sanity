@@ -6,16 +6,18 @@ export default {
   fields: [
 
     {
-      name: 'siteTitle',
+      name: 'title',
       title: 'Title of website',
       type: 'string',
     },
 
     {
-      name: 'siteDescription',
-      title: 'Description of website',
-      type: 'text',
+      name: 'description',
+      title: 'Short description of this website',
+      description: 'Please provide a short description for SEO and preview text (required)',
+      type: 'localeText',
       rows: 3,
+      validation: Rule => Rule.required().error('A min of 2 characters is required'),
     },
 
     {
@@ -23,8 +25,6 @@ export default {
       title: 'Site cover image',
       type: 'images',
     },
-
-
   ],
 
   preview: {

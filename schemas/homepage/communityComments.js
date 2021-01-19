@@ -4,7 +4,7 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'communityCommentFullName',
+      name: 'title',
       title: 'Full name',
       description: 'Will not be displayed on website',
       type: 'localeString',
@@ -17,37 +17,31 @@ export default {
     },
 
     {
-      name: 'communityCommentActive',
+      name: 'active',
       title: 'Is this comment active?',
       type: 'boolean'
     },
 
     {
-      name: 'communityCommentAddToHomepage',
+      name: 'addToHomepage',
       title: 'Add to homepage',
       type: 'boolean'
     },
 
 
     {
-      name: 'communityCommentFriendlyName',
+      name: 'shortName',
       title: 'First name',
       description: 'Friendly name (to be displayed on website)',
       type: 'localeString',
       validation: Rule => Rule.required().error('A min of 2 characters is required'),
-
-      // validation: Rule =>
-      //   Rule.fields({
-      //     en: fieldRule => fieldRule.required().min(2).error('A title of min. 2 characters is required'),
-      //   }),
     },
 
     {
-      name: 'communityCommentEmail',
+      name: 'email',
       title: 'Email address',
       type: 'string',
     },
-
 
     {
       name: 'publishedAt',
@@ -62,7 +56,7 @@ export default {
     },
 
     {
-      name: 'communityComment',
+      name: 'content',
       title: 'Short user comment',
       type: 'localeText',
       rows: 3,
@@ -83,7 +77,7 @@ export default {
 
   preview: {
     select: {
-      title: 'communityCommentFullName.en',
+      title: 'title.en',
       date: 'publishedAt'
     },
     prepare(selection) {
